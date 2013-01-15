@@ -17,7 +17,7 @@ development:
   encoding: unicode
   database: kpop_development
   pool: 5
-  username: kpop
+  username: <%= ENV['USER'] %>
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
