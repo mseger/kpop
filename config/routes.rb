@@ -8,6 +8,6 @@ Kpop::Application.routes.draw do
 
   resources :users
 
-  root to: 'users#index', constraints: SignedInConstraint
-  root to: 'users#new'
+  root to: 'main#home_li', constraints: SignedInConstraint
+  root to: 'main#home_not_li'
 end
