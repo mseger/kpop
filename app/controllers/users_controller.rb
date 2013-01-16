@@ -10,4 +10,14 @@ class UsersController < ApplicationController
     @user.destroy
     redirect_to users_url
   end
+
+  # PUT
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(params[:user])
+      render 'update'
+    else
+      render 'error'
+    end
+  end
 end

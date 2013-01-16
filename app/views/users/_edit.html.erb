@@ -1,0 +1,22 @@
+<h2>Edit partial!!!</h2>
+
+<%= form_for current_user, remote: true do |f| %>
+  <%= f.label :company %>
+  <%= f.text_field :company %>
+  
+  <%= f.label :cleanliness %>
+  <%= f.text_field :cleanliness %>
+
+  <%= f.label :loudness %>
+  <%= f.check_box :loudness %>
+
+  <%= f.label :house_parties %>
+  <%= f.check_box :house_parties %>
+
+  <%= f.label :about %>
+  <%= f.text_area :about %>
+
+  <%= f.submit "Find Roommates!", class: "btn" %>
+<% end %>
+
+<div class="result" />
