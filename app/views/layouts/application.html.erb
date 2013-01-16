@@ -8,7 +8,30 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">Project name</a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="active">
+            <% if current_user %>
+              <%= link_to "Sign out", signout_path %>
+            <% else %>
+              <%= link_to 'Sign in', 'auth/facebook' %>
+            <% end %>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <%= yield %>
+
+</div>
 
 </body>
 </html>
