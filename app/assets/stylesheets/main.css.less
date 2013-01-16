@@ -1,173 +1,40 @@
-// Place all the styles related to the main controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "palate.css.less";
 
 /* -------------------------------------- NON LOGGED IN --------------------------------------*/
 
-/* Set floating body text margins to 0 */
-[class*="dom-body-text"] p {
-  margin: 0 0 10px 0;
-}
-.dom-body-text p.p-1 {
-  background-image: none;
-  font-family:'droid sans';
-  line-height: 26.666667938232422px;
-  font-size: 15.555556297302246px;
-  background-color: rgba(0, 0, 0, 0);
-  color: #333333;
-  font-weight: normal;
-  text-decoration: none;
-  text-align: left;
-  text-shadow: none;
-  padding: 0px;
-  border: none;
-}
-.dom-body-text.dom-body-text-1 {
-  overflow: hidden;
-  width: 376px;
-  height: 221px;
-  position: relative;
-  top: 470px;
-  left: 175px;
-}
-.dom-body-text.dom-body-text-2 {
-  overflow: hidden;
-  width: 187px;
-  height: 31px;
-  position: relative;
-  top: 470px;
-  left: 616px;
-}
-.dom-body-text.dom-body-text-3 {
-  overflow: hidden;
-  width: 226px;
-  height: 31px;
-  position: relative;
-  top: 560px;
-  left: 615px;
+.home-not-li-content {
+  .icon.large-globe {
+    color: @lightBlue;
+    font-size: 200px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    top: 10px;
+  }
+
+  .thumbnails {
+    top: 100px;
+  }
+
+  .page-header {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    top: 90px;
+
+    h1 {
+      font-family:"droid sans";
+      font-size: 35px;
+
+      small {
+        font-size: 25px;
+        line-height: 16.666667938232422px;
+      }
+    }
+  }
 }
 
-.icon.large-globe {
-  color: #9f9db3;
-  font-size: 200px;
-  text-align: center;
-  position: relative;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  top: 85px;
-}
-.icon.icon-2 {
-  color: #374d80;
-  font-size: 25.55555534362793px;
-  height: 25px;
-  width: 25px;
-  position: relative;
-  top: 715px;
-  left: 512px;
-}
-.icon.icon-3 {
-  color: #374d80;
-  font-size: 25.55555534362793px;
-  height: 25px;
-  width: 25px;
-  position: relative;
-  top: 715px;
-  left: 475px;
-}
-.icon.icon-4 {
-  color: #374d80;
-  font-size: 25.55555534362793px;
-  height: 25px;
-  width: 25px;
-  position: relative;
-  top: 715px;
-  left: 552px;
-}
 
-select.select-1 {
-  width: 244px;
-  height: 30px;
-  position: relative;
-  top: 505px;
-  left: 615px;
-}
-select.select-2 {
-  width: 244px;
-  height: 29px;
-  position: relative;
-  top: 595px;
-  left: 615px;
-}
-/*
-Using this css requires Font Awesome:
-http://fortawesome.github.com/Font-Awesome/
-*/
- .heading {
-  font-family:"josefin sans";
-  font-size: 50px;
-  color: #374d80;
-  width: 300px;
-  height: 42px;
-  position: absolute;
-  top: 80px;
-  left: 175px;
-}
 
-.thumbnails {
-  position: relative;
-  top: 100px;
-}
-.thumbnails .span4 .thumbnail .image {
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  border-bottom-left-radius: 0px;
-  margin: 0px;
-}
-.thumbnails .span4 .thumbnail .image-1 {
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  border-bottom-left-radius: 0px;
-  margin: 0px;
-}
-.thumbnails .span4 .thumbnail .image-2 {
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  border-bottom-left-radius: 0px;
-  margin: 0px;
-}
-.page-header {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  position: relative;
-  top: 90px;
-}
-.page-header h1 {
-  font-family:"droid sans";
-  font-size: 35px;
-}
-.page-header h1 small {
-  font-size: 25px;
-  line-height: 16.666667938232422px;
-}
-.btn {
-  color: rgba(55, 77, 128, 0.972549);
-  width: 240px;
-  height: 30px;
-  position: relative;
-  top: 651px;
-  left: 618px;
-}
-.btn .icon {
-  color: #374d80;
-  font-size: 27.77777862548828px;
-  height: 28px;
-  width: 30px;
-}
 
 /* ------------------------------- LOGGED IN (INSERT HERE)------------------------------*/
