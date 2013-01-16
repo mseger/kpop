@@ -37,6 +37,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.4.0)
+    commonjs (0.2.6)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -53,6 +54,11 @@ GEM
     json (1.7.6)
     jwt (0.1.5)
       multi_json (>= 1.0)
+    less (2.2.2)
+      commonjs (~> 0.2.6)
+    less-rails (2.2.6)
+      actionpack (>= 3.1)
+      less (~> 2.2.0)
     libv8 (3.3.10.4)
     mail (2.4.4)
       i18n (>= 0.4.0)
@@ -134,6 +140,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails
+  less-rails
   omniauth-facebook
   pg
   rails (= 3.2.11)
