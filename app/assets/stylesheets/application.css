@@ -1,5 +1,6 @@
 /*
  *= require_self
- *= require palate.css.less
+ *= require palate
+ *= require bootstrap_and_overrides
  *= require_tree .
  */
