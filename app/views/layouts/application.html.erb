@@ -12,13 +12,13 @@
   <div class="navbar-inner">
     <div class="container">
 
-      <a class="brand" href="#">
+      <a class="brand" href="/">
         <i class="icon icon-globe"></i>
         Internopolis
       </a>
 
       <ul class="nav pull-right">
-        <li><%= link_to "Roommates" %></li>
+        <li><%= link_to "Roommates", people_path %></li>
 
       <% if current_user %>
         <li class="dropdown">
