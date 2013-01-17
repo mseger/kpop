@@ -1,0 +1,2 @@
+class UserStarredMatch < StarredMatch
+end

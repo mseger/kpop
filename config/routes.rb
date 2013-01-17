@@ -8,6 +8,7 @@ Kpop::Application.routes.draw do
 
   resources :users
 
+  resources :starred_matches, constraints: SignedInConstraint
   resources :people, constraints: SignedInConstraint
 
   root to: 'main#home_li', constraints: SignedInConstraint
