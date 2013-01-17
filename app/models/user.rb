@@ -11,4 +11,8 @@ class User < ActiveRecord::Base
       user.save!
     end
   end
+
+  def self.all_but(user)
+    User.where("id <> ?", user.id)
+  end
 end

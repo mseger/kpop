@@ -1,2 +1,34 @@
 <!-- Roommates page -->
 <%= render partial: 'users/edit' %>
+
+<div class="potential-matches-container hidden">
+  <div class="row">
+    <ul class="pager">
+      <li class="previous span2" style="height:100%;">
+        <a href="#">&larr; Prev</a>
+      </li>
+    <% @people.each do |person| %>
+      <li class="span2 potential-match">
+        <strong><%= person.name %></strong><br />
+        <%= image_tag "http://graph.facebook.com/#{person.uid}/picture?type=large" %><br />
+        <div class="btn-group">
+          <button class="btn">
+            <i class="icon icon-globe"></i>
+          </button>
+          <button class="btn">
+            <i class="icon icon-facebook"></i>
+          </button>
+          <button class="btn">
+            <i class="icon icon-star-empty"></i>
+          </button>
+        </div>
+      </li>
+    <% end %>
+      <li class="next span2">
+        <a href="#">Next &rarr;</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<ul>

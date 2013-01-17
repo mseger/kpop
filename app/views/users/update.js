@@ -1,1 +1,1 @@
-$(".result").html("Successfully updated!");
+$('.potential-matches-container').removeClass("hidden");
