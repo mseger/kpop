@@ -14,7 +14,8 @@ $(".btn.unstarred-match").live("click", function(e) {
     var params = {
       "match": {
         "matchee_id": matcheeId,
-        "type": "UserMatch"
+        "type": "UserMatch",
+        "starred": true
       }
     };
     $.ajax({

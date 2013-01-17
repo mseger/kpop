@@ -18,4 +18,10 @@ class User < ActiveRecord::Base
   def self.all_but(user)
     User.where("id <> ?", user.id)
   end
+
+  def starred_matchees
+    self.matches.starred.map do |starred_match|
+      starred_match.matchee
+    end
+  end
 end
