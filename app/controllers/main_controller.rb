@@ -6,5 +6,6 @@ class MainController < ApplicationController
 
 	# GET / (user logged in)
 	def home_li
+		@starred_matchees = current_user.matchees
 	end
 end

@@ -1,1 +1,21 @@
-<h1> LOGGED IN!!! </h1>
+<%= render partial: 'show' %>
+
+<div class="matches-container">
+  <div class="row">
+    <ul class="pager">
+      <li class="previous span2" style="height:100%;">
+        <a href="#">&larr; Prev</a>
+      </li>
+    <% @starred_matchees.each do |matchee| %>
+      <li class="span2 match-card-container" data-matchee-id="<%= matchee.id %>">
+        <%= render partial: "people/match_card", locals: {person: matchee} %>
+      </li>
+    <% end %>
+      <li class="next span2">
+        <a href="#">Next &rarr;</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<ul>
