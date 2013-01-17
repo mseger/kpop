@@ -1,0 +1,2 @@
+class UserMatch < Match
+end

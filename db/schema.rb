@@ -11,14 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130117042127) do
+ActiveRecord::Schema.define(:version => 20130117230409) do
 
-  create_table "starred_matches", :force => true do |t|
+  create_table "matches", :force => true do |t|
     t.integer  "user_id"
     t.integer  "matchee_id"
     t.string   "type"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.boolean  "starred"
   end
 
   create_table "users", :force => true do |t|

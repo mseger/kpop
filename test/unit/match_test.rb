@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class StarredMatchesControllerTest < ActionController::TestCase
+class MatchTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -1,1 +1,1 @@
-$('.potential-matches-container').removeClass("hidden");
+$('.matches-container').removeClass("hidden");

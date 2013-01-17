@@ -1,2 +1,0 @@
-class UserStarredMatch < StarredMatch
-end

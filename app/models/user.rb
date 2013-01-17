@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
   attr_accessible :name, :oauth_expires_at, :oauth_token, :provider, :uid, :company, :cleanliness, :house_parties, :loudness, :about
 
-  has_many :starred_matches
-  has_many :matchees, through: :starred_matches
+  has_many :matches
+  has_many :matchees, through: :matches
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|

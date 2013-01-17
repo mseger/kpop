@@ -1,4 +1,4 @@
-class StarredMatch < ActiveRecord::Base
+class Match < ActiveRecord::Base
   attr_accessible :matchee_id, :type, :user_id
 
   belongs_to :user

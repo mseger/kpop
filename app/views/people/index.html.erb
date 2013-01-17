@@ -1,14 +1,14 @@
 <!-- Roommates page -->
 <%= render partial: 'users/edit' %>
 
-<div class="potential-matches-container hidden">
+<div class="matches-container hidden">
   <div class="row">
     <ul class="pager">
       <li class="previous span2" style="height:100%;">
         <a href="#">&larr; Prev</a>
       </li>
     <% @people.each do |person| %>
-      <li class="span2 potential-match" data-matchee-id="<%= person.id %>">
+      <li class="span2 match-card-container" data-matchee-id="<%= person.id %>">
         <%= render partial: "match_card", locals: {person: person} %>
       </li>
     <% end %>
