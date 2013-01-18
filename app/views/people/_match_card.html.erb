@@ -1,5 +1,6 @@
-<strong><%= person.name %></strong><br />
-<%= image_tag "http://graph.facebook.com/#{person.uid}/picture?type=large" %><br />
+<strong><%= matchee.name %></strong><br />
+<%= image_tag "http://graph.facebook.com/#{matchee.uid}/picture?type=large" %><br />
+
 <div class="btn-group">
   <button class="btn">
     <i class="icon icon-globe"></i>
@@ -8,13 +9,7 @@
     <i class="icon icon-facebook"></i>
   </button>
 
-<% if current_user.starred_matchees.include?(person) %>
-  <button class="btn starred-match" data-id="<%= Match.find_by_user_id_and_matchee_id(current_user.id, person.id).id %>">
-    <i class="icon icon-star"></i>
+  <button class="btn <%= match.starred ? 'starred-match' : 'unstarred-match' %>" data-id="<%= match.id %>">
+    <i class="icon icon-star<%= '-empty' unless match.starred %>"></i>
   </button>
-<% else %>
-  <button class="btn unstarred-match" data-matchee-id="<%= person.id %>">
-    <i class="icon icon-star-empty"></i>
-  </button>
-<% end %>
 </div>
