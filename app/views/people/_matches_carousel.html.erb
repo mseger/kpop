@@ -3,11 +3,13 @@
     <li class="previous span2" style="height:100%;">
       <a href="#">&larr; Prev</a>
     </li>
-  <% @matchees.each do |person| %>
-    <li class="span2 match-card-container" data-matchee-id="<%= person.id %>">
-      <%= render partial: "match_card", locals: {person: person} %>
+
+  <% @matchees.zip(@matches).each do |matchee, match| %>
+    <li class="span2 match-card-container" data-matchee-id="<%= matchee.id %>">
+      <%= render partial: "match_card", locals: {matchee: matchee, match: match} %>
     </li>
   <% end %>
+  
     <li class="next span2">
       <a href="#">Next &rarr;</a>
     </li>
