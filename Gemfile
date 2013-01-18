@@ -7,10 +7,8 @@ gem 'jquery-rails'
 gem 'omniauth-facebook'
 gem 'koala'
 
-
 group :assets do
   gem 'less-rails'
-  gem 'coffee-rails', '~> 3.2.1'
   gem 'twitter-bootstrap-rails'
 
   gem 'uglifier', '>= 1.0.3'
