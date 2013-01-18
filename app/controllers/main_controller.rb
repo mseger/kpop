@@ -6,7 +6,7 @@ class MainController < ApplicationController
 
 	# GET / (user logged in)
 	def home_li
-		@starred_matchees = current_user.matchees
+		@matchees = current_user.starred_matchees
 	end
 
   # POST /generate_matches
