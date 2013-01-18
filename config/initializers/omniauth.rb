@@ -2,6 +2,6 @@ FACEBOOK_KEYS = YAML.load_file("#{Rails.root}/config/facebook_keys.yml")[Rails.e
 OmniAuth.config.logger = Rails.logger
 
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :facebook, FACEBOOK_KEYS['app_id'], FACEBOOK_KEYS['secret']
+  provider :facebook, FACEBOOK_KEYS['app_id'], FACEBOOK_KEYS['secret'], scope: "user_location,friends_location"
 end
 
