@@ -3,7 +3,7 @@
   <div class="row">
     <div class="span3">
       <div class="profpic">
-        <%= image_tag "http://graph.facebook.com/#{current_user.uid}/picture?type=large" %><br>
+        <%= image_tag fb_prof_image(current_user) %><br>
         <b>Welcome, <%= current_user.name %></b>
       </div>
     </div>
