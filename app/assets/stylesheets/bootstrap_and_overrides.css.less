@@ -31,7 +31,9 @@ body {
 }
 
 .icon.icon-globe {
-  color: @lightBlue;
+	&:not(.black) {
+  	color: @lightBlue;
+  }
 }
 
 @sansFontFamily: "Josefin Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
