@@ -1,1 +1,0 @@
-$('.matches-container').removeClass("hidden");

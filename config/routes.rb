@@ -11,6 +11,8 @@ Kpop::Application.routes.draw do
   resources :matches, constraints: SignedInConstraint
   resources :people, constraints: SignedInConstraint
 
+  match '/generate_matches', to: "main#generate_matches", via: :post, constraints: SignedInConstraint
+
   root to: 'main#home_li', constraints: SignedInConstraint
   root to: 'main#home_not_li'
 end

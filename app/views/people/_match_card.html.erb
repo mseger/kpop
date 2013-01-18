@@ -8,7 +8,7 @@
     <i class="icon icon-facebook"></i>
   </button>
 
-<% if current_user.matchees.include?(person) %>
+<% if current_user.starred_matchees.include?(person) %>
   <button class="btn starred-match" data-id="<%= Match.find_by_user_id_and_matchee_id(current_user.id, person.id).id %>">
     <i class="icon icon-star"></i>
   </button>
