@@ -28,14 +28,22 @@
           <div class="control-group">
             <%= f.label :loudness, class: "control-label" %>
             <div class="controls">
-              <%= f.check_box :loudness %>
+              <%= f.hidden_field :loudness %>
+              <div class="btn-group" data-toggle="buttons-radio">
+                <button type="button" class="btn quiet <%= 'active' unless current_user.loudness %>">Quiet</button>
+                <button type="button" class="btn loud <%= 'active' if current_user.loudness %>">Loud</button>
+              </div>
             </div>
           </div>
 
           <div class="control-group">
             <%= f.label :house_parties, class: "control-label" %>
             <div class="controls">
-              <%= f.check_box :house_parties %>
+              <%= f.hidden_field :house_parties %>
+              <div class="btn-group" data-toggle="buttons-radio">
+                <button type="button" class="btn okay <%= 'active' if current_user.house_parties %>">Don't Care</button>
+                <button type="button" class="btn not-okay <%= 'active' unless current_user.house_parties %>">Opposed</button>
+              </div>
             </div>
           </div>
 
