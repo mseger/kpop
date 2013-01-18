@@ -1,3 +1,3 @@
 var mId = "<%= @match.matchee_id %>";
-var content = "<%= escape_javascript(render partial: 'people/match_card', locals: {person: @match.matchee}) %>";  
+var content = "<%= escape_javascript(render partial: 'people/match_card', locals: {matchee: @match.matchee, match: @match}) %>";  
 $(".match-card-container[data-matchee-id='" + mId + "']").html(content);

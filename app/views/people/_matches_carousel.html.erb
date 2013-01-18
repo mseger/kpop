@@ -6,10 +6,10 @@
 
   <% @matchees.zip(@matches).each do |matchee, match| %>
     <li class="span2 match-card-container" data-matchee-id="<%= matchee.id %>">
-      <%= render partial: "match_card", locals: {matchee: matchee, match: match} %>
+      <%= render partial: "people/match_card", locals: {matchee: matchee, match: match} %>
     </li>
   <% end %>
-  
+
     <li class="next span2">
       <a href="#">Next &rarr;</a>
     </li>
