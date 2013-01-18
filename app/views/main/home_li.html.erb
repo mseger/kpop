@@ -1,5 +1,15 @@
-<div class="matches-container">
-  <%= render partial: 'people/matches_carousel' %>
+<div class="home-li-content">
+	<div class="row">
+		<div class="span3">
+			<%= image_tag fb_prof_image(current_user) %>
+			<br>
+			<strong><%= current_user.name %></strong><br>
+			<%= current_user.company %><br>
+		</div>
+		<div class="span9">
+			<div class="matches-container">
+			  <%= render partial: 'people/matches_carousel' %>
+			</div>
+		</div>
+	</div>
 </div>
-
-<ul>
