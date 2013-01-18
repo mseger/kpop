@@ -16,10 +16,10 @@ ActiveRecord::Schema.define(:version => 20130118212715) do
   create_table "matches", :force => true do |t|
     t.integer  "user_id"
     t.integer  "matchee_id"
+    t.string   "type"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.boolean  "starred"
-    t.string   "type"
     t.string   "matchee_name"
   end
 
