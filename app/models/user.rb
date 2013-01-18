@@ -3,7 +3,9 @@ class User < ActiveRecord::Base
 
   has_many :matches
   has_many :user_matches
+  has_many :fb_matches
   has_many :user_matchees, through: :user_matches, source: :matchee
+  has_many :fb_matchees, through: :fb_matches, source: :matchee
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
@@ -21,6 +23,6 @@ class User < ActiveRecord::Base
   end
 
   def matchees
-    self.user_matchees
+    self.user_matchees + self.fb_matches
   end
 end

@@ -1,5 +1,5 @@
 class Match < ActiveRecord::Base
-  attr_accessible :matchee_id, :type, :user_id, :starred
+  attr_accessible :user_id, :matchee_id, :matchee_name, :type, :starred
 
   belongs_to :user
 
