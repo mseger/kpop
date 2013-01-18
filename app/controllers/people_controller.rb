@@ -3,10 +3,8 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.js
   def index
-    @matchees = current_user.matchees.limit(4)
-    @matches = @matchees.map do |matchee| 
-      Match.find_by_user_id_and_matchee_id current_user.id, matchee.id
-    end
+    @matches = current_user.matches.limit(4)
+    @matchees = @matches.collect { |match| match.matchee }
 
     respond_to do |format|
       format.html #index.html.erb

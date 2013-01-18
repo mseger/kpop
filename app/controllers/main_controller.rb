@@ -6,10 +6,8 @@ class MainController < ApplicationController
 
 	# GET / (user logged in)
 	def home_li
-		@matchees = current_user.starred_matchees
-    @matches = @matchees.map do |matchee| 
-      Match.find_by_user_id_and_matchee_id current_user.id, matchee.id
-    end
+    @matches = current_user.matches.starred.limit(4)
+    @matchees = @matches.collect { |match| match.matchee }
 	end
 
   # POST /generate_matches

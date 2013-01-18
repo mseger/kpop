@@ -2,7 +2,8 @@ class User < ActiveRecord::Base
   attr_accessible :name, :oauth_expires_at, :oauth_token, :provider, :uid, :company, :cleanliness, :house_parties, :loudness, :about
 
   has_many :matches
-  has_many :matchees, through: :matches
+  has_many :user_matches
+  has_many :user_matchees, through: :user_matches, source: :matchee
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
@@ -19,9 +20,7 @@ class User < ActiveRecord::Base
     User.where("id <> ?", user.id)
   end
 
-  def starred_matchees
-    self.matches.starred.map do |starred_match|
-      starred_match.matchee
-    end
+  def matchees
+    self.user_matchees
   end
 end
