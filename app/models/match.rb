@@ -8,5 +8,5 @@ class Match < ActiveRecord::Base
   validates_presence_of :type
   validates_uniqueness_of :matchee_id, :scope => :user_id
 
-  scope :starred, where(starred: true)
+  scope :starred, lambda { |starred=true| where("starred = ?", starred)} 
 end
