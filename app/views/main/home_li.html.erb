@@ -10,7 +10,7 @@
 			<div class="starred-roommate-matches">
 				<h2> Starred Roommate Matches </h2>
 				<div class="matches-container">
-				  <%= render partial: 'people/matches_carousel' %>
+				  <%= render partial: 'people/matches_carousel', locals: {matches: @matches, matchees: @matchees}%>
 				</div>
 			</div>
 		</div>
