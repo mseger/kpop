@@ -1,18 +1,14 @@
 <!-- Roommates page -->
 <div class="roommates-page">
-	<div class= "well">
-		<h2>About You</h2>
-	</div>
 	<%= render partial: 'users/edit' %>
 
 	<div class="matches-container">
 		<div class="well">
 			<h2>Your Matches</h2>
-		</div>
-	  <%= render partial: 'matches_carousel', locals: {matches: @matches, matchees: @matchees} %>
+	  	<%= render partial: 'matches_carousel', locals: {matches: @matches, matchees: @matchees} %>
+	  </div>
 	  <div class="well">
 	  	<h2>Your Friends in the Area</h2>
+	  	<%= render partial: 'matches_carousel', locals: {matches: @fb_matches, matchees: @fb_matchees} %>
 	  </div>
-	  <%= render partial: 'matches_carousel', locals: {matches: @fb_matches, matchees: @fb_matchees} %>
 	</div>
-</div>
