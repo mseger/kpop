@@ -4,7 +4,7 @@
       <%= link_to_previous_page @matches, "Prev", class: "pagination-prev", remote: true %>
     </li>
 
-  <% @matchees.zip(@matches).each do |matchee, match| %>
+  <% matchees.zip(matches).each do |matchee, match| %>
     <li class="span2 match-card-container" data-matchee-id="<%= matchee.id %>">
       <%= render partial: "people/match_card", locals: {matchee: matchee, match: match} %>
     </li>
