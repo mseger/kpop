@@ -6,6 +6,7 @@ gem 'pg'
 gem 'jquery-rails'
 gem 'omniauth-facebook'
 gem 'koala'
+gem 'kaminari'
 
 group :assets do
   gem 'less-rails'
