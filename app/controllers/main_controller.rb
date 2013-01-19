@@ -6,12 +6,15 @@ class MainController < ApplicationController
 
 	# GET / (user logged in)
 	def home_li
-    @starred_matches = current_user.matches.starred.page(params[:page]).per(2)
-    @starred_matchees = @starred_matches.collect { |match| match.matchee }
-
     respond_to do |format|
-      format.html #home_li.html.erb
-      format.js { render 'update_matches_carousel' }
+      format.html do
+        @starred_matches = current_user.matches.starred.page(params[:page]).per(2)
+        @starred_matchees = @starred_matches.collect { |match| match.matchee }
+        # render 'home_li'
+      end
+      format.js do
+        redirect_to controller: 'people', action: 'index', params: {carousel_name: 'starred-matches', page: params[:page]}, remote: true
+      end
     end
 	end
 
@@ -40,7 +43,7 @@ class MainController < ApplicationController
       match.save
     end
 
-    redirect_to controller: 'people', action: 'index', format: 'js'
+    render nothing: true
   end
 
 end

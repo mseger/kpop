@@ -12,7 +12,9 @@
 				<div class="starred-roommate-matches">
 					<h2> Starred Roommate Matches </h2>
 					<div class="matches-container">
-					  <%= render partial: 'people/matches_carousel', locals: {matches: @starred_matches, matchees: @starred_matchees}%>
+						<div class="starred-matches-carousel-container">
+						  <%= render partial: 'people/matches_carousel', locals: {matches: @starred_matches, matchees: @starred_matchees, carousel_name: 'starred-matches'}%>
+						</div>
 					</div>
 				</div>
 			</div>

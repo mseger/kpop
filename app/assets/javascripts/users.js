@@ -1,7 +1,17 @@
 $(".btn.find-roommates").live("click", function (e) {
   $.ajax({
     url: "/generate_matches",
-    type: "POST"
+    type: "POST",
+    success: function() {
+      $.ajax({
+        url: "/people.js?carousel_name=matches",
+        type: "GET"
+      });
+      $.ajax({
+        url: "/people.js?carousel_name=fb-matches",
+        type: "GET"
+      });
+    }
   });
 });
 

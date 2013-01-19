@@ -6,13 +6,13 @@
 		<div class="well">
 			<h2>Your Matches</h2>
 			<div class="matches-carousel-container">
-		  	<%= render partial: 'matches_carousel', locals: {matches: @matches, matchees: @matchees} %>
+		  	<%= render partial: 'matches_carousel', locals: {matches: @matches, matchees: @matchees, carousel_name: 'matches'} %>
 		  </div>
 	  </div>
 	  <div class="well">
 	  	<h2>Your Friends in the Area</h2>
 	  	<div class="fb-matches-carousel-container">
-		  	<%= render partial: 'matches_carousel', locals: {matches: @fb_matches, matchees: @fb_matchees} %>
+		  	<%= render partial: 'matches_carousel', locals: {matches: @fb_matches, matchees: @fb_matchees, carousel_name: 'fb-matches'} %>
 		  </div>
 	  </div>
 	</div>
