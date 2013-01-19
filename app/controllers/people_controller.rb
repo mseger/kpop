@@ -3,7 +3,7 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.js
   def index
-    @matches = current_user.matches.limit(4)
+    @matches = current_user.matches.page(params[:page]).per(4)
     @matchees = @matches.collect { |match| match.matchee }
 
     @fb_matches = current_user.fb_matches.limit(4)

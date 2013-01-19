@@ -1,16 +1,19 @@
 <div class="home-li-content">
-	<div class="row">
+	<div class="row-fluid">
 		<div class="span3">
 			<%= image_tag fb_prof_image(current_user) %>
 			<br>
 			<strong><%= current_user.name %></strong><br>
 			<%= current_user.company %><br>
 		</div>
+
 		<div class="span9">
-			<div class="starred-roommate-matches">
-				<h2> Starred Roommate Matches </h2>
-				<div class="matches-container">
-				  <%= render partial: 'people/matches_carousel', locals: {matches: @matches, matchees: @matchees}%>
+			<div class="well">
+				<div class="starred-roommate-matches">
+					<h2> Starred Roommate Matches </h2>
+					<div class="matches-container">
+					  <%= render partial: 'people/matches_carousel', locals: {matches: @matches, matchees: @matchees}%>
+					</div>
 				</div>
 			</div>
 		</div>
