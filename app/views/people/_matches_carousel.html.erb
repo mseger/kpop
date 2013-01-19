@@ -2,7 +2,7 @@
   <div class="row-fluid">
     <ul class="pager">
       <li class="span2">
-        <a href="#">&larr; Prev</a>
+        <%= link_to_previous_page matches, "Prev", class: "pagination-prev", remote: true %>
       </li>
     <% matchees.zip(matches).each do |matchee, match| %>
       <li class="span2 match-card-container" data-matchee-id="<%= matchee.id %>">
@@ -11,7 +11,7 @@
     <% end %>
 
       <li class="span2">
-        <a href="#">Next &rarr;</a>
+        <%= link_to_next_page matches, "Next", class: "pagination-next", remote: true %>
       </li>
     </ul>
   </div>

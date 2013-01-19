@@ -5,10 +5,14 @@
 	<div class="matches-container">
 		<div class="well">
 			<h2>Your Matches</h2>
-	  	<%= render partial: 'matches_carousel', locals: {matches: @matches, matchees: @matchees} %>
+			<div class="matches-carousel-container">
+		  	<%= render partial: 'matches_carousel', locals: {matches: @matches, matchees: @matchees} %>
+		  </div>
 	  </div>
 	  <div class="well">
 	  	<h2>Your Friends in the Area</h2>
-	  	<%= render partial: 'matches_carousel', locals: {matches: @fb_matches, matchees: @fb_matchees} %>
+	  	<div class="fb-matches-carousel-container">
+		  	<%= render partial: 'matches_carousel', locals: {matches: @fb_matches, matchees: @fb_matchees} %>
+		  </div>
 	  </div>
 	</div>

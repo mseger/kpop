@@ -6,7 +6,7 @@ class PeopleController < ApplicationController
     @matches = current_user.matches.page(params[:page]).per(4)
     @matchees = @matches.collect { |match| match.matchee }
 
-    @fb_matches = current_user.fb_matches.limit(4)
+    @fb_matches = current_user.fb_matches.page(params[:page]).per(4)
     @fb_matchees = @fb_matches.collect { |fb_match| fb_match.matchee}
 
     respond_to do |format|

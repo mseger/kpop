@@ -6,8 +6,8 @@ class MainController < ApplicationController
 
 	# GET / (user logged in)
 	def home_li
-    @matches = current_user.matches.starred.page(params[:page]).per(2)
-    @matchees = @matches.collect { |match| match.matchee }
+    @starred_matches = current_user.matches.starred.page(params[:page]).per(2)
+    @starred_matchees = @starred_matches.collect { |match| match.matchee }
 
     respond_to do |format|
       format.html #home_li.html.erb

@@ -1,2 +1,5 @@
-var content = "<%= escape_javascript(render partial: 'matches_carousel') %>";
-$(".matches-container").html(content);
+var matchesContent = "<%= escape_javascript(render partial: 'matches_carousel', locals: {matches: @matches, matchees: @matchees}) %>";
+$(".matches-carousel-container").html(matchesContent);
+
+var fbMatchesContent = "<%= escape_javascript(render partial: 'matches_carousel', locals: {matches: @fb_matches, matchees: @fb_matchees}) %>";
+$(".fb-matches-carousel-container").html(fbMatchesContent);
