@@ -43,4 +43,21 @@ class User < ActiveRecord::Base
     self.user_matchees + self.fb_matches
   end
 
+  def location_id
+    unless @location_id
+      user_hash = User.fb_graph ? User.fb_graph.get_object("#{self.uid}?fields=location") : {}
+      if user_hash.has_key?("location")
+        @location_id = user_hash["location"]["id"]
+        @location_name = user_hash["location"]["name"]
+      end
+    end
+    @location_id
+  end
+ 
+  def location_name
+    unless @location_name
+      self.location_id # Generates @location_name
+    end
+    @location_name
+  end
 end

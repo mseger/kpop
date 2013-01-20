@@ -1,5 +1,5 @@
 <strong><%= matchee.name %></strong><br />
-<% if matchee.class == FbUser && matchee.location_name %>
+<% if matchee.location_name %>
   <strong><%= matchee.location_name %></strong><br />
 <% end %>
 <%= image_tag fb_prof_image(matchee) %><br />
