@@ -1,11 +1,7 @@
 class MainController < ApplicationController
-	
-	# GET / (no user logged in)
-	def home_not_li
-	end
 
-	# GET / (user logged in)
-	def home_li
+	# GET / (logged in)
+	def home
     respond_to do |format|
       format.html do
         @starred_matches = current_user.matches.starred.page(params[:page]).per(2)
@@ -18,7 +14,7 @@ class MainController < ApplicationController
     end
 	end
 
-  # POST /generate_matches
+  # POST /generate_matches.js
   def generate_matches
     # Delete all matches except starred ones
     current_user.matches.each do |match|
