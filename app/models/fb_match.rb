@@ -4,6 +4,6 @@ class FbMatch < Match
   validates_presence_of :matchee_name
 
   def matchee
-    FbUser.new(self.matchee_id, self.matchee_name)
+    FbUser.new(self.matchee_id)
   end
 end

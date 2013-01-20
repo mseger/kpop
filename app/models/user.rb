@@ -7,6 +7,19 @@ class User < ActiveRecord::Base
   has_many :user_matchees, through: :user_matches, source: :matchee
   has_many :fb_matchees, through: :fb_matches, source: :matchee
 
+  def self.current
+    Thread.current[:user]
+  end
+
+  def self.current=(user)
+    raise(ArgumentError, "Expected an object of class 'User', got #{user.inspect}") unless user.is_a?(User)
+    Thread.current[:user] = user
+  end
+
+  def self.fb_graph
+    User.current.fb_graph if User.current
+  end
+
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
       user.provider = auth.provider
@@ -22,7 +35,12 @@ class User < ActiveRecord::Base
     User.where("id <> ?", user.id)
   end
 
+  def fb_graph
+    Koala::Facebook::API.new(self.oauth_token)
+  end
+
   def matchees
     self.user_matchees + self.fb_matches
   end
+
 end
