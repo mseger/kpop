@@ -26,7 +26,7 @@ class MainController < ApplicationController
     num_starred_matches = current_user.matchees.length
     User.all_but(current_user).each do |matchee|
       next if current_user.matchees.include? matchee
-      match = current_user.user_matches.build(matchee_id: matchee.id, matchee_name: matchee.name, starred: false)
+      match = current_user.user_matches.build(matchee_id: matchee.id, starred: false)
       match.save
     end
 
@@ -35,7 +35,7 @@ class MainController < ApplicationController
     end
     fb_matches = fb_matches.sort_by{rand}[0..5]
     fb_matches.each do |fb_match|
-      match = current_user.fb_matches.build(matchee_id: fb_match["id"], matchee_name: fb_match["name"], starred: false)
+      match = current_user.fb_matches.build(matchee_id: fb_match["id"], starred: false)
       match.save
     end
 
