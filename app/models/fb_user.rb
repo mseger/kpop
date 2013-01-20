@@ -18,7 +18,7 @@ class FbUser
 
   def location_id
     unless @location_id
-      user_hash = User.fb_graph.get_object("#{self.uid}?fields=location")
+      user_hash = User.fb_graph ? User.fb_graph.get_object("#{self.uid}?fields=location") : {}
       if user_hash.has_key?("location")
         @location_id = user_hash["location"]["id"]
         @location_name = user_hash["location"]["name"]
